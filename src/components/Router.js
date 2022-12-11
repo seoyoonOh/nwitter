@@ -3,7 +3,7 @@ import { HashRouter as Router, Redirect, Route, Switch } from "react-router-dom"
 import Auth from "../routes/Auth";
 import Home from "../routes/Home";
 import Navigation from "./Navigation";
-import Profile from "./Profile";
+import Profile from "../routes/Profile";
 
 const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
@@ -16,7 +16,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
               <Home userObj={userObj} />
             </Route>
             <Route exact path="/profile">
-              <Profile />
+              <Profile userObj={userObj} />
             </Route>
             <Redirect from="*" to="/" />
           </>
